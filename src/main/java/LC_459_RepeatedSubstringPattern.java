@@ -41,6 +41,25 @@ public class LC_459_RepeatedSubstringPattern {
         return false;
     }
 
+    public boolean repeatedSubstringPattern3(String s) {
+        int len = s.length();
+
+        StringBuilder sb = new StringBuilder();
+        for(int i = len / 2; i >= 1; i--) {
+            if(len % i == 0) {
+                int m = len / i;
+                for(int k = 0; k < m; k++) {
+                    sb.append(s.substring(0, i));
+                }
+                if (s.equals(sb.toString())) {
+                    return true;
+                }
+                sb.setLength(0);
+            }
+        }
+        return false;
+    }
+
     /*
     The perfect clever solution for this question is given below.
 
