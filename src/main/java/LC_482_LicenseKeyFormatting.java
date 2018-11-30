@@ -43,6 +43,18 @@ public class LC_482_LicenseKeyFormatting {
         return sb.toString();
     }
 
+    //This is a very clever solution from leetcode discussions. The idea is loop through string from the end, if current
+    //char is not dash, then append it to newly created string builder, with case that, in mod k + 1, if mode is equal to
+    //K, it means we need to append dash, if not then append the regular character from the end. Not to confuse the
+    //length after we add the dash. Then reverse and convert to upper case that newly created string and return.
+    public String licenseKeyFormattingClever(String s, int k) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = s.length() - 1; i >= 0; i--)
+            if (s.charAt(i) != '-')
+                sb.append(sb.length() % (k + 1) == k ? '-' : "").append(s.charAt(i));
+        return sb.reverse().toString().toUpperCase();
+    }
+
     //This is my old solution, which is very complex and uses chars to upper case end deletion of the dashes. Instead
     //We could just use built in String replace and toUppperCase() methods. Then instead of complex mathematics,
     //just add dashes from the back clevery
