@@ -69,14 +69,14 @@ public class LC_482_LicenseKeyFormatting {
             StringBuilder sbNew = new StringBuilder();
 
             if(div == 0) {
-                for(int i = 0; i < newLen; i = i + (K / rem)) {
-                    sbNew.append(sb.substring(i, i + (K / rem)));
+                for(int i2 = 0; i < newLen; i2 = i2 + (K / rem)) {
+                    sbNew.append(sb.substring(i2, i2 + (K / rem)));
                     sbNew.append("-");
                 }
             } else {
                 sbNew.append(sb.substring(0, div));
-                for(int i = ; i < newLen - 1; i = i + (K / rem)) {
-                    sbNew.append(sb.substring(i + div, i + div + (K / rem)));
+                for(int ii = 0; ii < newLen - 1; ii = ii + (K / rem)) {
+                    sbNew.append(sb.substring(ii + div, ii + div + (K / rem)));
                     sbNew.append("-");
                 }
             }
@@ -84,5 +84,6 @@ public class LC_482_LicenseKeyFormatting {
             sbNew.deleteCharAt(sb.length() - 1);
             return sbNew.toString();
         }
+        return null;
     }
 }
