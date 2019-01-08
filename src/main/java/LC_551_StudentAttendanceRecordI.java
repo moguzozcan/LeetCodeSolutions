@@ -46,6 +46,6 @@ public class LC_551_StudentAttendanceRecordI {
     There can also be a solution using regex, if there are three consequtive L's or two A's, then false, else true
      */
     public boolean checkRecordRegex(String s) {
-        return !s.matches(".*LLL.*|.*A.*A.*")
+        return !s.matches(".*LLL.*|.*A.*A.*");
     }
 }
