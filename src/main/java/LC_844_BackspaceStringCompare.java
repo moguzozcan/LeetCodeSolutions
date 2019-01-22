@@ -82,4 +82,55 @@ public class LC_844_BackspaceStringCompare {
         }
         return true;
     }
+
+    /*
+    Idea is to start from the reverse of the string and count the occurence of the # characters and skip that many
+    count after we see a real character. Then compare the current characters. If they are different then return false,
+    Also compare the remaining length of the strings if they are not equal to or bigger than 0 then return false, this
+    compares if we are comparing the current character with non existing character.
+     */
+    public boolean backspaceCompareO1Space(String S, String T) {
+        int lenS = S.length() - 1;
+        int lenT = T.length() - 1;
+
+        int skipCountS = 0;
+        int skipCountT = 0;
+
+        while(lenS >= 0 || lenT >= 0) {
+            while(lenS >= 0) {
+                if(S.charAt(lenS) == '#') {
+                    skipCountS++;
+                    lenS--;
+                } else if(skipCountS > 0) {
+                    skipCountS--;
+                    lenS--;
+                } else {
+                    break;
+                }
+            }
+
+            while(lenT >= 0) {
+                if(T.charAt(lenT) == '#') {
+                    skipCountT++;
+                    lenT--;
+                } else if(skipCountT > 0) {
+                    skipCountT--;
+                    lenT--;
+                } else {
+                    break;
+                }
+            }
+
+            if(lenS >= 0 && lenT >= 0 && S.charAt(lenS) != T.charAt(lenT)) {
+                return false;
+            }
+
+            if ((lenS >= 0) != (lenT >= 0))
+                return false;
+
+            lenS--;
+            lenT--;
+        }
+        return true;
+    }
 }
