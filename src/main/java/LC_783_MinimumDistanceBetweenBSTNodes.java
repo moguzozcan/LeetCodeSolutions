@@ -40,7 +40,9 @@ public class LC_783_MinimumDistanceBetweenBSTNodes {
     }
 
     /*
-    The idea is get all the elements from the BST, and stor
+    The idea is get all the elements from the BST, and store it in a list, then sort, of no need to sort if the values
+    are obtained in in-order fashion, since BST itself is sorted. Then we can look for the minimum difference between
+    the adjacent nodes.
      */
     public int minDiffInBST(TreeNode root) {
         List<Integer> list = new ArrayList<>();
@@ -65,9 +67,8 @@ public class LC_783_MinimumDistanceBetweenBSTNodes {
             return;
         }
 
-        list.add(root.val);
-
         traverse(root.left, list);
+        list.add(root.val);
         traverse(root.right, list);
     }
 }
