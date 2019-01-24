@@ -43,6 +43,8 @@ public class LC_783_MinimumDistanceBetweenBSTNodes {
     The idea is get all the elements from the BST, and store it in a list, then sort, of no need to sort if the values
     are obtained in in-order fashion, since BST itself is sorted. Then we can look for the minimum difference between
     the adjacent nodes.
+    The time complexity is O(N), the recursion, and the space complexity is also O(N), since we store the tree in a
+    list and then loop through it.
      */
     public int minDiffInBST(TreeNode root) {
         List<Integer> list = new ArrayList<>();
@@ -71,4 +73,31 @@ public class LC_783_MinimumDistanceBetweenBSTNodes {
         list.add(root.val);
         traverse(root.right, list);
     }
+
+    private Integer prev = null;
+    private int minDiff = Integer.MAX_VALUE;
+
+    /*
+    We can decrease the space complexity a bit by not using a list that stores the whole BST and store the prev value,
+    and also the minDiff value. The time complexity is O(N), space complexity is O(1), which is better than the previous
+    solution
+     */
+    public int minDiffInBSTDiffComplexity(TreeNode root) {
+
+        if(root.left !=null) {
+            minDiffInBSTDiffComplexity(root.left);
+        }
+
+        if(prev != null) {
+            minDiff = Math.min(minDiff, root.val - prev);
+        }
+        prev = root.val;
+
+        if(root.right != null) {
+            minDiffInBSTDiffComplexity(root.right);
+        }
+
+        return minDiff;
+    }
+
 }
