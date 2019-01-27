@@ -71,30 +71,26 @@ import java.util.List;
 
 public class LC_422_ValidWordSquare {
 
+    /*
+    This question gives us a two-digit array, each row and column is a word, the word that needs to satisfy the kth row
+    and the word of the kth column are equal. There is no requirement that each word be the same length, as long as the
+    corresponding position The same word can be. So here is actually a problem of traversing a two-dimensional array
+    and then verifying whether the characters on the corresponding bits are equal. Since the lengths of the words in
+    the lines are not necessarily equal, we must first judge whether the characters are out of bounds when we find
+    the characters in the corresponding positions. Whether there is a character in the corresponding position, return
+    false directly if it meets the requirements, and return true after all traversal, see the code as follows:
+     */
     public boolean validWordSquare(List<String> words) {
 
-        int row = words.size();
-        int column = words.get(0).length();
-
-        if(words.size() == 0 || words == null) {
+        if (words == null || words.size() == 0) {
             return true;
         }
-
-        if(row != column) {
-            return false;
-        }
-
-        StringBuilder sb = new StringBuilder();
-        String currWord;
-        for(int i = 0; i < row; i++) {
-            currWord = words.get(i);
-            for(int j = 0; i < words.get(i).length(); j++) {
-                sb.append(words.get(j).charAt(i));
+        int n = words.size();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < words.get(i).length(); j++) {
+                if (j >= n || words.get(j).length() <= i || words.get(j).charAt(i) != words.get(i).charAt(j))
+                    return false;
             }
-            if(!currWord.equals(sb.toString())) {
-                return false;
-            }
-            sb.delete(0, sb.length() -1);
         }
         return true;
     }
