@@ -1,4 +1,4 @@
-/*
+package easy;/*
 Difficulty: Hard
 Lists: Top Google
 

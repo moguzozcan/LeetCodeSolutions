@@ -1,4 +1,4 @@
-/*
+package easy;/*
 Let's call an array A a mountain if the following properties hold:
 
 A.length >= 3

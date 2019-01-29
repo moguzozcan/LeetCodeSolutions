@@ -1,4 +1,4 @@
-/*
+package easy;/*
 In a string S of lowercase letters, these letters form consecutive groups of the same character.
 
 For example, a string like S = "abbxxxxzyy" has the groups "a", "bb", "xxxx", "z" and "yy".

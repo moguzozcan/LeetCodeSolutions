@@ -1,3 +1,5 @@
+package easy;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -39,11 +41,11 @@ public class LC_346_MovingAverageFromDataStream {
 /*
 //This is not the best solution, if the window size is too much, we are re summing the old streams, instead we can do
 //something like the following method
-public class LC_346_MovingAverageFromDataStream {
+public class easy.LC_346_MovingAverageFromDataStream {
     private int windowSize;
     private Deque<Integer> window;
 
-    public LC_346_MovingAverageFromDataStream(int windowSize) {
+    public easy.LC_346_MovingAverageFromDataStream(int windowSize) {
         this.windowSize = windowSize;
         window = new ArrayDeque<>();
     }

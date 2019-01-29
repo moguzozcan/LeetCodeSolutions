@@ -1,4 +1,4 @@
-/*
+package easy;/*
 Difficulty: Easy
 Companies: Facebook
 

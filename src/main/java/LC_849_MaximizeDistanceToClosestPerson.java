@@ -1,4 +1,4 @@
-/*
+package easy;/*
 In a row of seats, 1 represents a person sitting in that seat, and 0 represents that the seat is empty.
 
 There is at least one empty seat, and at least one person sitting.

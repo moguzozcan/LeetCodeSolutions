@@ -1,4 +1,4 @@
-/*
+package easy;/*
 Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.
 
 Example:
@@ -28,7 +28,7 @@ public class LC_530_MinimumAbsoluteDifferenceInBST {
 
     /*
     The logic in this question is to use the power or feature of BST. BST is binary search tree, where the values in
-    the left of a node is always smaller than the node and the values in the rigth of the node is always larger or
+    the left of a node is always smaller than the node and the values in the right of the node is always larger or
     equal to the node. In this question, we are trying to find the minimum difference between the nodes. Obviously, this
     min difference can be between two adjacent nodes, assume that these node values are in sorted. Actually they are!
     Because if we traverse the BST in in-order fashion, we get all the values in a sorted way.

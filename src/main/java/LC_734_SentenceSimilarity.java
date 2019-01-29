@@ -1,4 +1,4 @@
-/*
+package easy;/*
 Given two sentences words1, words2 (each represented as an array of strings), and a list of similar word pairs pairs,
 determine if two sentences are similar.
 For example, “great acting skills” and “fine drama talent” are similar, if the similar word pairs are
