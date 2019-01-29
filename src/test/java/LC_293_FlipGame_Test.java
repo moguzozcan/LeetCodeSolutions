@@ -1,3 +1,4 @@
+import easy.LC_293_FlipGame;
 import org.junit.Before;
 import org.junit.Test;
 

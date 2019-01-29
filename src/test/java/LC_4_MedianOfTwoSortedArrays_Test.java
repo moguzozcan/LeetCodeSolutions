@@ -1,3 +1,4 @@
+import easy.LC_4_MedianOfTwoSortedArrays;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

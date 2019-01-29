@@ -1,3 +1,4 @@
+import easy.LC_408_ValidWordAbbreviation;
 import org.junit.Assert;
 import org.junit.Test;
 

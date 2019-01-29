@@ -73,7 +73,7 @@ public class LC_17_LetterCombinationsOfAPhoneNumber {
 
 
     /*
-    I have written the next method after understanding the solution
+    I have written the next method wit
      */
     public List<String> letterCombinationsIWrote(String digits) {
         if(digits.length() == 0) {
