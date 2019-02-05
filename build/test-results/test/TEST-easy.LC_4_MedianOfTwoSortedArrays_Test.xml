@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="easy.LC_4_MedianOfTwoSortedArrays_Test" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-02-05T07:17:51" hostname="EVT01220NB" time="0.0">
+  <properties/>
+  <testcase name="testRegularWithLengthTwoLengthOneArray" classname="easy.LC_4_MedianOfTwoSortedArrays_Test" time="0.0"/>
+  <testcase name="testRegularWithLengthOdd" classname="easy.LC_4_MedianOfTwoSortedArrays_Test" time="0.0"/>
+  <testcase name="testRegularWithLengthOne" classname="easy.LC_4_MedianOfTwoSortedArrays_Test" time="0.0"/>
+  <testcase name="testRegularWithLengthEmptyArray" classname="easy.LC_4_MedianOfTwoSortedArrays_Test" time="0.0"/>
+  <testcase name="testRegularWithLengthEven" classname="easy.LC_4_MedianOfTwoSortedArrays_Test" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

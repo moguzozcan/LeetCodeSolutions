@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="easy.LC_1_TwoSum_Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-02-05T07:17:51" hostname="EVT01220NB" time="0.0">
+  <properties/>
+  <testcase name="testRegularly" classname="easy.LC_1_TwoSum_Test" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
