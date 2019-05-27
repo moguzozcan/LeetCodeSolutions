@@ -28,7 +28,7 @@ public class LC_1_TwoSum {
         int remTarget;
         for(int i = 0; i < nums.length; i++) {
             remTarget = target - nums[i];
-            if(numsMap.containsKey(remTarget)) {
+            if(numsMap.containsKey(remTarget) && numsMap.get(remTarget) != i) {
                 return new int[] {i, numsMap.get(remTarget)};
             }
 
