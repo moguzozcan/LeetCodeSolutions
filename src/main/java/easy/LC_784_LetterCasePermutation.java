@@ -102,6 +102,7 @@ public class LC_784_LetterCasePermutation {
         lc_784_letterCasePermutation.letterCasePermutation(s);
     }
 
+    //TODO work for BFS and DFS solution
     public List<String> letterCasePermutationBFS(String S) {
         if (S == null) {
             return new LinkedList<>();
