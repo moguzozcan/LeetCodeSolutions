@@ -44,7 +44,7 @@ public class LC_252_MeetingRooms {
             public int compare(Interval o1, Interval o2) {
                 return o1.start - o2.start;
             }
-        };
+        });
 
         for(int i = 0; i < meetings.length - 1; i++) {
             if(meetings[i].end >= meetings[i + 1].start) {
