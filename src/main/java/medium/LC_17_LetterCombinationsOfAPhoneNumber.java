@@ -1,11 +1,12 @@
 package medium;
 
 /*
+Difficulty: Medium
+Companies: Facebook
+
 Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
 
 A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
-
-
 
 Example:
 
@@ -23,78 +24,47 @@ import java.util.Map;
 
 public class LC_17_LetterCombinationsOfAPhoneNumber {
 
-    Map<String, String> phone = new HashMap<String, String>() {{
-        put("2", "abc");
-        put("3", "def");
-        put("4", "ghi");
-        put("5", "jkl");
-        put("6", "mno");
-        put("7", "pqrs");
-        put("8", "tuv");
-        put("9", "wxyz");
+    Map<Character, String> phone = new HashMap<Character, String>() {{
+        put('2', "abc");
+        put('3', "def");
+        put('4', "ghi");
+        put('5', "jkl");
+        put('6', "mno");
+        put('7', "pqrs");
+        put('8', "tuv");
+        put('9', "wxyz");
     }};
 
-    List<String> output = new ArrayList<String>();
+    /**
+     Complexity Analysis
 
-    public void backtrack(String combination, String next_digits) {
-        // if there is no more digits to check
-        if (next_digits.length() == 0) {
-            // the combination is done
-            output.add(combination);
-        }
-        // if there are still digits to check
-        else {
-            // iterate over all letters which map
-            // the next available digit
-            String digit = next_digits.substring(0, 1);
-            String letters = phone.get(digit);
-            for (int i = 0; i < letters.length(); i++) {
-                String letter = phone.get(digit).substring(i, i + 1);
-                // append the current letter to the combination
-                // and proceed to the next digits
-                backtrack(combination + letter, next_digits.substring(1));
-            }
-        }
-    }
+     Time complexity : O(3^N*4^M)where N is the number of digits in the input that maps to 3 letters (e.g. 2, 3, 4, 5,
+     6, 8) and M is the number of digits in the input that maps to 4 letters (e.g. 7, 9), and N+M is the total number digits in the input.
 
-    /*
-    Complexity Analysis
-
-    Time complexity : O(3^N*4^M)where N is the number of digits in the input that maps to 3 letters (e.g. 2, 3, 4, 5,
-    6, 8) and M is the number of digits in the input that maps to 4 letters (e.g. 7, 9), and N+M is the total number digits in the input.
-
-    Space complexity : O(3^N * 4^M)since one has to keep 3^N * 4^M solutions.
+     Space complexity : O(3^N * 4^M)since one has to keep 3^N * 4^M solutions.
      */
     public List<String> letterCombinations(String digits) {
-        if (digits.length() != 0)
-            backtrack("", digits);
-        return output;
-    }
 
-
-    /*
-    I have written the next method wit
-     */
-    public List<String> letterCombinationsIWrote(String digits) {
+        List<String> combinations = new ArrayList<>();
         if(digits.length() == 0) {
-            return output;
+            return combinations;
         }
 
-        combination("", digits);
-        return output;
+        findCombinations(combinations, digits, 0, "");
+
+        return combinations;
     }
 
-    private void combination(String combination, String digits) {
-        if(digits.length() == 0) {
-            output.add(combination);
+    private void findCombinations(List<String> combinations, String digits, int index, String str) {
+        if(index == digits.length()) {
+            combinations.add(str);
             return;
         }
 
-        String digit = digits.substring(0, 1);
-        String possibilities = phone.get(digit);
-
-        for(int i = 0; i < possibilities.length(); i++) {
-            combination(combination + possibilities.substring(i, i + 1), digits.substring(1));
+        String letters = phone.get(digits.charAt(index));
+        for(char letter : letters.toCharArray()) {
+            findCombinations(combinations, digits, index + 1, str + letter);
         }
     }
+
 }
