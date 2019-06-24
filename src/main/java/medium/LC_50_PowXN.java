@@ -62,10 +62,12 @@ public class LC_50_PowXN {
      * @return
      */
     public double myPow2(double x, int n) {
+        if(n == Integer.MIN_VALUE && x > 1)
+            return 0;
         if(n == 0)
             return 1;
         if(n<0){
-            n = -n;
+            n = -n; //consider the overflow situation
             x = 1/x;
         }
         return (n%2 == 0) ? myPow(x*x, n/2) : x*myPow(x*x, n/2);
