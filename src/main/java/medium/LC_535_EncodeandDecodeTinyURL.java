@@ -45,7 +45,7 @@ public class LC_535_EncodeandDecodeTinyURL {
         if (!url2code.containsKey(longUrl)) {
             StringBuilder code = new StringBuilder();
             for(int i = 0; i < 6; i++) {
-                int randomNum = ThreadLocalRandom.current().nextInt(0, 60 + 1);
+                int randomNum = ThreadLocalRandom.current().nextInt(0, 60);
                 code.append(alphabet.charAt(randomNum));
             }
             if(!code2url.containsKey(code.toString())) {
