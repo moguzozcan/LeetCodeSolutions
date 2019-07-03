@@ -1,5 +1,11 @@
-package easy;/*
-Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+package easy;
+
+/*
+Difficulty: Easy
+Companies: Google
+
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't
+exist, return -1.
 
 Examples:
 
