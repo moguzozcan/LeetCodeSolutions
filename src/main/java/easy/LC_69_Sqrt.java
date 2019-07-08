@@ -45,4 +45,20 @@ public class LC_69_Sqrt {
         }
         return start;
     }
+
+    /**
+     * This is a more clear solution, and tricky point is to change the for loop limit every time you
+     * increase the i. "i <= x / i". Also if// Look for the critical point: i*i <= x && (i+1)(i+1) > x
+     * Then we do not have an integer result, so we should return the value of the lower integer.
+     * @param x
+     * @return
+     */
+    public int mySqrt2(int x) {
+        if (x == 0) return 0;
+        for (int i = 1; i <= x / i; i++)
+            if (i <= x / i && (i + 1) > x / (i + 1))// Look for the critical point: i*i <= x && (i+1)(i+1) > x
+                return i;
+        return -1;
+    }
 }
+
