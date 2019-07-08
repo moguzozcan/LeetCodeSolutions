@@ -1,4 +1,6 @@
-package easy;/*
+package hard;
+
+/*
 Difficulty: Hard
 Lists: Top Google
 
@@ -21,6 +23,15 @@ The median is (2 + 3)/2 = 2.5
 
 
 public class LC_4_MedianOfTwoSortedArrays {
+
+    /**
+     * Idea is to merge two arrays and then find the median in the merged array,
+     * If there are even number of elements in the merged array, then get the middle ones and
+     * divide their sum to 2. If there are odd elements then get the middle element and this is your median
+     * @param nums1
+     * @param nums2
+     * @return
+     */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int len1 = nums1.length;
         int len2 = nums2.length;
