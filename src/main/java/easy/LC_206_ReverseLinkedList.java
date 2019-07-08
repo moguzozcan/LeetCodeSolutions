@@ -1,6 +1,9 @@
 package easy;
 
 /*
+Difficulty: Easy
+Companies: Facebook
+
 Reverse a singly linked list.
 
 Example:
