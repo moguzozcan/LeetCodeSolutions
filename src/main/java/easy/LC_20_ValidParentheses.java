@@ -54,21 +54,21 @@ public class LC_20_ValidParentheses {
             if (c == '(' || c == '{' || c == '[') {
                 parenthesisStack.push(c);
             } else if (c == ')') {
-                if(parenthesisStack.peekFirst() == null) {
+                if (parenthesisStack.peekFirst() == null) {
                     return false;
                 }
                 if (parenthesisStack.peekFirst() == '(') {
                     parenthesisStack.removeFirst();
                 }
             } else if (c == '}') {
-                if(parenthesisStack.peekFirst() == null) {
+                if (parenthesisStack.peekFirst() == null) {
                     return false;
                 }
                 if (parenthesisStack.peekFirst() == '{') {
                     parenthesisStack.removeFirst();
                 }
             } else if (c == ']') {
-                if(parenthesisStack.peekFirst() == null) {
+                if (parenthesisStack.peekFirst() == null) {
                     return false;
                 }
                 if (parenthesisStack.peekFirst() == '[') {
@@ -77,10 +77,8 @@ public class LC_20_ValidParentheses {
             } else {
                 return false;
             }
-
         }
         return parenthesisStack.size() == 0;
-
     }
 
 
