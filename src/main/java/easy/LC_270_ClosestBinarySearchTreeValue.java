@@ -46,7 +46,7 @@ public class LC_270_ClosestBinarySearchTreeValue {
             helper(root.right, target);
         }
     }
-}
+
 
     public int closestValue(TreeNode root, double target) {
         double diff = Double.MAX_VALUE;
