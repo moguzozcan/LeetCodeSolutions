@@ -21,6 +21,23 @@ complexity?
  */
 public class LC_268_MissingNumber {
 
+    public int missingNumberMinusValues(int[] nums) {
+
+        for(int i = 0; i < nums.length; i++) {
+            if(!(Math.abs(nums[i]) >= nums.length)) {
+                nums[Math.abs(nums[i])] = -nums[Math.abs(nums[i])];
+            }
+        }
+
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] > 0) {
+                return i;
+            }
+        }
+        return 1;
+    }
+
+
     /**
      * First idea is of course is to sort the array, but sorting is ONlogN times. We need to do it in linear time
      * @param nums
