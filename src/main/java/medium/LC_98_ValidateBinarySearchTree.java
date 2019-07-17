@@ -1,5 +1,8 @@
 package medium;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 Difficulty: Medium
 Companies: Facebook
@@ -73,6 +76,33 @@ public class LC_98_ValidateBinarySearchTree {
         TreeNode(int x) {
             val = x;
         }
+    }
+
+    public boolean isValidBST2(TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+
+        List<Integer> nums = new ArrayList<>();
+        helper(root, nums);
+
+        for(int i = 0; i < nums.size() - 1; i++) {
+            if(nums.get(i) >= nums.get(i + 1)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void helper(TreeNode root, List<Integer> nums) {
+        if(root == null) {
+            return;
+        }
+
+        helper(root.left, nums);
+        nums.add(root.val);
+        helper(root.right, nums);
     }
 }
 
