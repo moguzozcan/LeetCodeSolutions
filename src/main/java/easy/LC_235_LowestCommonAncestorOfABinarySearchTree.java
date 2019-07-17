@@ -32,6 +32,27 @@ p and q are different and both values will exist in the BST.
  */
 public class LC_235_LowestCommonAncestorOfABinarySearchTree {
 
+    public TreeNode lowestCommonAncestor17072019(TreeNode root, TreeNode p, TreeNode q) {
+        if(root.val == p.val) {
+            return p;
+        }
+
+        if(root.val == q.val) {
+            return q;
+        }
+
+        if((root.val > p.val && root.val < q.val) || (root.val > q.val && root.val < p.val)) {
+            return root;
+        } else if(root.val < p.val && root.val < q.val) {
+            return lowestCommonAncestor17072019(root.right, p, q);
+        } else {
+            return lowestCommonAncestor17072019(root.left, p, q);
+        }
+    }
+
+
+
+
     /*
     This is a recursive solution for this, we have covered all the possible cases.
     1. If one of the value is smaller than root and the other is larger then return root,
